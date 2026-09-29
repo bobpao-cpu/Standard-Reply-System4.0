@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>工單回覆公版管理系統 (旗艦版 v4.0)</title>
+  <title>工單回覆公版管理系統</title>
   <style>
     :root {
       --bg-color: #F4F6F9;
@@ -22,9 +22,7 @@
       --var-bg: #FEF3C7;
       --var-border: #F59E0B;
     }
-
     * { box-sizing: border-box; }
-
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft JhengHei", sans-serif;
       background-color: var(--bg-color);
@@ -33,7 +31,6 @@
       color: var(--text-main);
       font-size: 14px;
     }
-
     .header-title {
       max-width: 1200px;
       margin: 0 auto 20px auto;
@@ -43,7 +40,6 @@
       flex-wrap: wrap;
       gap: 12px;
     }
-
     .header-title h1 {
       font-size: 20px;
       margin: 0;
@@ -53,7 +49,6 @@
       align-items: center;
       gap: 10px;
     }
-
     .header-title h1::before {
       content: "";
       display: inline-block;
@@ -62,13 +57,11 @@
       background: var(--primary);
       border-radius: 2px;
     }
-
     .header-actions {
       display: flex;
       gap: 8px;
       align-items: center;
     }
-
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -76,11 +69,9 @@
       grid-template-columns: 440px 1fr;
       gap: 24px;
     }
-
     @media (max-width: 900px) {
       .container { grid-template-columns: 1fr; }
     }
-
     .card {
       background: var(--card-bg);
       border-radius: 10px;
@@ -90,7 +81,6 @@
       display: flex;
       flex-direction: column;
     }
-
     h2 {
       font-size: 15px;
       margin: 0 0 16px 0;
@@ -102,7 +92,6 @@
       border-bottom: 1px solid var(--border-color);
       padding-bottom: 12px;
     }
-
     label {
       font-weight: 600;
       font-size: 13px;
@@ -110,7 +99,6 @@
       margin: 14px 0 6px;
       display: block;
     }
-
     select, input, textarea {
       width: 100%;
       padding: 9.5px 12px;
@@ -122,19 +110,16 @@
       color: var(--text-main);
       transition: all 0.15s ease-in-out;
     }
-
     select:focus, input:focus, textarea:focus {
       border-color: var(--primary);
       box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
     }
-
     textarea {
       resize: vertical;
       min-height: 160px;
       line-height: 1.6;
       font-family: inherit;
     }
-
     button {
       padding: 10px 16px;
       border: 0;
@@ -148,10 +133,8 @@
       align-items: center;
       gap: 6px;
     }
-
     button:active { transform: scale(0.99); }
     button:disabled, button[aria-disabled="true"] { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
-
     .btn-primary { background: var(--primary); color: #fff; }
     .btn-primary:hover { background: var(--primary-hover); }
     .btn-accent { background: var(--accent-teal); color: #fff; }
@@ -168,7 +151,6 @@
       position: relative;
       margin-bottom: 12px;
     }
-
     .search-results {
       position: absolute;
       top: 100%;
@@ -183,13 +165,11 @@
       z-index: 100;
       display: none;
     }
-
     .search-item {
       padding: 8px 12px;
       cursor: pointer;
       border-bottom: 1px solid #F1F5F9;
     }
-
     .search-item:hover { background: #F1F5F9; }
     .search-item-cat { font-size: 11px; color: var(--text-muted); }
     .search-item-title { font-weight: 600; color: var(--primary); }
@@ -202,7 +182,6 @@
       padding: 12px 16px;
       margin-bottom: 14px;
     }
-
     .vars-title {
       font-size: 12px;
       font-weight: 700;
@@ -212,19 +191,15 @@
       align-items: center;
       gap: 6px;
     }
-
     .var-field {
       margin-bottom: 8px;
     }
-    
     .var-field:last-child { margin-bottom: 0; }
-
     .var-field label {
       font-size: 12px;
       margin: 0 0 4px 0;
       color: #78350F;
     }
-
     .var-field input {
       padding: 6px 10px;
       font-size: 12px;
@@ -241,14 +216,12 @@
       display: flex;
       flex-direction: column;
     }
-
     .preview-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       margin-bottom: 12px;
     }
-
     .preview-title {
       font-weight: 700;
       color: var(--primary);
@@ -257,7 +230,6 @@
       align-items: center;
       gap: 8px;
     }
-
     .star-btn {
       background: none;
       border: none;
@@ -266,9 +238,7 @@
       padding: 0;
       color: #CBD5E1;
     }
-
     .star-btn.active { color: var(--favorite-color); }
-
     .timestamp-tag {
       font-size: 11.5px;
       color: var(--text-muted);
@@ -276,7 +246,6 @@
       padding: 3px 8px;
       border-radius: 4px;
     }
-
     .preview-text {
       white-space: pre-wrap;
       word-break: break-word;
@@ -292,7 +261,6 @@
       color: #334155;
       box-shadow: inset 0 1px 2px rgba(0,0,0,0.02);
     }
-
     .hint-box {
       font-size: 12px;
       color: var(--text-muted);
@@ -327,6 +295,9 @@
     <label>1. 選擇商品／違規類別</label>
     <div class="flex-row">
       <select id="categorySelect" onchange="updateTitleOptions()"></select>
+      <button class="btn-secondary" style="padding: 9.5px 12px; flex-shrink: 0;" onclick="addCategory()" title="新增違規類別">
+        ➕ 新增類別
+      </button>
       <button class="btn-danger" style="padding: 9.5px 12px; flex-shrink: 0;" onclick="deleteCategory()" title="移除目前選擇的類別">
         🗑️ 移除類別
       </button>
@@ -413,7 +384,7 @@ const defaultData = {
     {
       title: "未有相關資訊請避免販售",
       updatedAt: "2026-08-31 12:00",
-      content: `Hi\n「{{商品名稱}}」為醫療器材，須符合以下規範依以下格式完整填寫，以免因違反醫療器材管理法受罰(最高可處新臺幣100萬元罰鍰)，如未有相關資訊請用戶避免販售，謝謝。\n\n＊「可於網路販售的醫療器材(第⼀等級醫療器材或部分開放之第二等級醫療器材)」- 商品描述須完整揭露以下資訊，另須加註此段文字「消費者使用前應詳閱醫療器材說明書」。\n所有產品須於「商品描述」載明：\n(1.) 醫療器材品名\n(2.) 醫療器材許可證字號/登錄字號\n(3.) 許可證所有人或登錄者之名稱\n(4.) 許可證所有人或登錄者之地址\n(5.) 製造業者名稱\n(6.) 製造業者地址\n(7.) 醫療器材商/藥商名稱\n(8.) 醫療器材商/藥商地址\n(9.) 醫療器材商/藥商許可證字號\n(10.) 醫療器材商/藥商諮詢專線\n；具量測功能之產品須額外載明：\n(11.) 定期校正服務之項目\n(12.) 定期校正服務之據點。\n請立即修正或自行刪除未經核準的商品。請參閱{{要如何在蝦皮販售醫療器材,https://seller.shopee.tw/edu/article/683}}`
+      content: `Hi\n「{{商品名稱}}」為醫療器材，須符合以下規範依以下格式完整填寫，以免因違反醫療器材管理法受罰(最高可處新臺幣100萬元罰鍰)，如未有相關資訊請用戶避免販售，謝謝。\n\n＊「可於網路販售的醫療器材(第⼀等級醫療器材或部分開放之第二等級醫療器材)」- 商品描述須完整揭露以下資訊，另須加註此段文字「消費者使用前應詳閱醫療器材說明書」。\n所有產品須於「商品描述」載明：\n(1.) 醫療器材品名\n(2.) 醫療器材許可證字號/登錄字號\n(3.) 許可證所有人或登錄者之名稱\n(4.) 許可證所有人或登錄者之地址\n(5.) 製造業者名稱\n(6.) 製造業者地址\n(7.) 醫療器材商/藥商名稱\n(8.) 醫療器材商/藥商地址\n(9.) 醫療器材商/藥商許可證字號\n(10.) 醫療器材商/藥商諮詢專線\n；具量測功能之產品須額外載明：\n(11.) 定期校正服務之項目\n(12.) 定期校正服務之據點。\n請鋪即修正或自行刪除未經核準的商品。請參閱{{要如何在蝦皮販售醫療器材,https://seller.shopee.tw/edu/article/683}}`
     },
     {
       title: "非醫材需提供食藥署證明",
@@ -908,6 +879,33 @@ function getCurrentFormattedTime() {
   return `${year}-${month}-${day} ${hours}:${minutes}`;
 }
 
+function addCategory() {
+  const newCat = prompt('請輸入要新增的違規類別名稱：');
+  if (!newCat || !newCat.trim()) return;
+
+  const catName = newCat.trim();
+
+  if (appData[catName]) {
+    alert('此類別已存在！');
+    return;
+  }
+
+  const previousState = cloneData(appData);
+
+  // 初始化該類別為空陣列
+  appData[catName] = [];
+
+  // 紀錄復原點並儲存
+  commitDataChange(previousState);
+
+  // 重新初始化選單並將選單切換至新新增的類別
+  init();
+  document.getElementById('categorySelect').value = catName;
+  updateTitleOptions();
+
+  alert(`✅ 已成功新增類別「${catName}」！`);
+}
+
 function saveTemplate() {
   const catSelect = document.getElementById('categorySelect');
   const titleSelect = document.getElementById('titleSelect');
@@ -1009,34 +1007,34 @@ function extractLinks() {
   const urlRegex = /(https?:\/\/[^\s]+)/g;
   const matches = text.match(urlRegex);
 
-  if (!matches || matches.length === 0) {
-    alert('此公版內文中未包含任何 URL 連結。');
-    return;
+  if (matches && matches.length > 0) {
+    const linksStr = matches.join('\n');
+    navigator.clipboard.writeText(linksStr).then(() => {
+      alert(`🔗 已成功複製以下連結：\n\n${linksStr}`);
+    });
+  } else {
+    alert('此內文中沒有包含任何網址連結！');
   }
-
-  const linksText = matches.join('\n');
-  navigator.clipboard.writeText(linksText).then(() => {
-    alert(`🔗 已成功提取並複製 ${matches.length} 個連結至剪貼簿！\n\n${linksText}`);
-  });
 }
 
-// 全域搜尋邏輯
 function handleSearch() {
   const query = document.getElementById('searchInput').value.trim().toLowerCase();
-  const resultsDiv = document.getElementById('searchResults');
+  const resultsBox = document.getElementById('searchResults');
 
   if (!query) {
-    resultsDiv.style.display = 'none';
+    resultsBox.style.display = 'none';
     return;
   }
 
-  resultsDiv.innerHTML = '';
-  let matchCount = 0;
+  resultsBox.innerHTML = '';
+  let count = 0;
 
   Object.keys(appData).forEach(cat => {
+    if (cat === '⭐ 我的最愛') return;
+
     appData[cat].forEach((item, index) => {
       if (item.title.toLowerCase().includes(query) || item.content.toLowerCase().includes(query)) {
-        matchCount++;
+        count++;
         const itemDiv = document.createElement('div');
         itemDiv.className = 'search-item';
         itemDiv.innerHTML = `
@@ -1048,41 +1046,32 @@ function handleSearch() {
           updateTitleOptions();
           document.getElementById('titleSelect').value = index;
           displayTemplate();
-          resultsDiv.style.display = 'none';
+          resultsBox.style.display = 'none';
           document.getElementById('searchInput').value = '';
         };
-        resultsDiv.appendChild(itemDiv);
+        resultsBox.appendChild(itemDiv);
       }
     });
   });
 
-  if (matchCount > 0) {
-    resultsDiv.style.display = 'block';
+  if (count > 0) {
+    resultsBox.style.display = 'block';
   } else {
-    resultsDiv.innerHTML = '<div class="search-item" style="color:var(--text-muted);">查無匹配的公版內容</div>';
-    resultsDiv.style.display = 'block';
+    resultsBox.innerHTML = '<div style="padding:10px; color:var(--text-muted); text-align:center;">未找到匹配的公版</div>';
+    resultsBox.style.display = 'block';
   }
 }
 
-// 點擊空白處關閉搜尋選單
-document.addEventListener('click', function(e) {
-  if (!e.target.closest('.search-box')) {
-    document.getElementById('searchResults').style.display = 'none';
-  }
-});
-
-// JSON 資料匯出
 function exportData() {
   const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(appData, null, 2));
   const downloadAnchor = document.createElement('a');
   downloadAnchor.setAttribute("href", dataStr);
-  downloadAnchor.setAttribute("download", `ticket_reply_templates_${getCurrentFormattedTime().replace(/[: ]/g, '_')}.json`);
+  downloadAnchor.setAttribute("download", `工單公版備份_${getCurrentFormattedTime().replace(/[: ]/g, '-')}.json`);
   document.body.appendChild(downloadAnchor);
   downloadAnchor.click();
   downloadAnchor.remove();
 }
 
-// JSON 資料匯入
 function importData(event) {
   const file = event.target.files[0];
   if (!file) return;
@@ -1090,24 +1079,33 @@ function importData(event) {
   const reader = new FileReader();
   reader.onload = function(e) {
     try {
-      const importedData = JSON.parse(e.target.result);
-      if (typeof importedData === 'object') {
+      const imported = JSON.parse(e.target.result);
+      if (typeof imported === 'object' && imported !== null) {
         const previousState = cloneData(appData);
-        appData = importedData;
+        appData = imported;
+        if (!appData["⭐ 我的最愛"]) appData["⭐ 我的最愛"] = [];
         commitDataChange(previousState);
         init();
-        alert('📥 公版資料庫已成功匯入！');
+        alert('📥 資料匯入成功！');
       } else {
-        alert('匯入失敗：檔案格式不符合！');
+        alert('匯入的檔案格式不正確！');
       }
     } catch (err) {
-      alert('匯入失敗：JSON 解析錯誤！');
+      alert('無法解析 JSON 檔案，請檢查檔案格式！');
     }
   };
   reader.readAsText(file);
 }
 
-// 系統初始化
+// 點擊外部自動關閉搜尋結果
+document.addEventListener('click', function(e) {
+  const searchBox = document.querySelector('.search-box');
+  if (searchBox && !searchBox.contains(e.target)) {
+    document.getElementById('searchResults').style.display = 'none';
+  }
+});
+
+// 初始化系統
 init();
 </script>
 
